@@ -1,0 +1,1329 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Tawang & Shergaon Escape | Private Journey for Two</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+:root {
+  --ink:#26332e;
+  --muted:#69746e;
+  --green:#526b5d;
+  --sage:#e9eee8;
+  --cream:#f7f5ef;
+  --sand:#e9e1d2;
+  --gold:#b18a58;
+  --line:#d9ded7;
+}
+
+* { box-sizing:border-box; }
+
+body {
+  margin:0;
+  background:#e8e8e4;
+  color:var(--ink);
+  font-family:'DM Sans',sans-serif;
+  font-size:10pt;
+  line-height:1.55;
+}
+
+h1,h2,h3,h4,p { margin-top:0; }
+h1,h2,h3,.serif { font-family:'Playfair Display',Georgia,serif; }
+h1 { font-size:37pt; line-height:1.08; font-weight:500; }
+h2 { font-size:25pt; line-height:1.15; font-weight:500; }
+h3 { font-size:16pt; font-weight:500; }
+h4 {
+  font-size:9pt;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+p { margin-bottom:9px; }
+
+.eyebrow {
+  text-transform:uppercase;
+  letter-spacing:.2em;
+  font-size:8pt;
+  font-weight:600;
+  color:var(--green);
+}
+
+.small,.caption {
+  font-size:8.5pt;
+  color:var(--muted);
+}
+
+.page {
+  width:210mm;
+  min-height:297mm;
+  margin:12mm auto;
+  padding:17mm 17mm 15mm;
+  background:white;
+  position:relative;
+  overflow:hidden;
+  page-break-after:always;
+}
+
+.page:last-child { page-break-after:auto; }
+
+.page-no {
+  position:absolute;
+  bottom:8mm;
+  right:17mm;
+  font-size:8pt;
+  color:#87918a;
+  letter-spacing:.12em;
+}
+
+.footer {
+  position:absolute;
+  bottom:8mm;
+  left:17mm;
+  font-size:7.5pt;
+  color:#87918a;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+.hero {
+  height:166mm;
+  width:calc(100% + 34mm);
+  margin:-17mm -17mm 0;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero > img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+}
+
+.hero:after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    180deg,
+    rgba(12,26,20,.03) 20%,
+    rgba(12,26,20,.15) 48%,
+    rgba(12,26,20,.68) 100%
+  );
+}
+
+/* Translucent gradient directly behind the text */
+.hero-copy {
+  position:absolute;
+  z-index:2;
+  isolation:isolate;
+  left:19mm;
+  right:18mm;
+  bottom:19mm;
+  color:white;
+}
+
+.hero-copy:before {
+  content:"";
+  position:absolute;
+  z-index:-1;
+  inset:-22px -24px -18px;
+  border-radius:3px;
+  background:linear-gradient(
+    90deg,
+    rgba(0,0,0,.60) 0%,
+    rgba(0,0,0,.38) 58%,
+    rgba(0,0,0,.05) 100%
+  );
+}
+
+.hero-copy .eyebrow { color:#ead8b8; }
+.hero-copy h1 { max-width:155mm; margin:10px 0; }
+.hero-copy p {
+  color:#f5f4ef;
+  max-width:135mm;
+  font-size:11pt;
+}
+
+.cover-meta {
+  display:flex;
+  gap:25px;
+  flex-wrap:wrap;
+  margin-top:18px;
+  font-size:8.5pt;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.cover-bottom {
+  padding-top:12mm;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12mm;
+}
+
+.cover-bottom h3 { margin-bottom:5px; }
+
+.intro {
+  font-family:'Playfair Display',serif;
+  font-size:14pt;
+  line-height:1.5;
+}
+
+.journey-route {
+  margin-top:8mm;
+  padding:5mm 5mm 4mm;
+  background:linear-gradient(110deg, #f2f4ef 0%, #faf8f2 100%);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.journey-route-heading {
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:8px;
+  margin-bottom:4mm;
+}
+.journey-route-note {
+  color:var(--muted);
+  font-size:7.5pt;
+  font-style:italic;
+}
+.route-stops {
+  display:grid;
+  grid-template-columns:repeat(5, 1fr);
+  gap:5px;
+  position:relative;
+}
+.route-stops:before {
+  content:"";
+  position:absolute;
+  left:8%;
+  right:8%;
+  top:9px;
+  border-top:1px solid #b7c2b7;
+}
+.route-stop {
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  gap:2px;
+  min-width:0;
+}
+.route-dot {
+  position:relative;
+  z-index:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:19px;
+  height:19px;
+  border-radius:50%;
+  background:var(--green);
+  color:white;
+  font-size:6.5pt;
+  font-weight:700;
+  letter-spacing:0;
+  margin-bottom:3px;
+}
+.route-stop strong {
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:10pt;
+  font-weight:600;
+  line-height:1.15;
+}
+.route-detail {
+  color:var(--muted);
+  font-size:7pt;
+  line-height:1.3;
+}
+
+.section-head {
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:15px;
+  border-bottom:1px solid var(--line);
+  padding-bottom:9px;
+  margin-bottom:17px;
+}
+
+.section-head h2 { margin:4px 0 0; }
+
+.day-label {
+  display:inline-block;
+  background:var(--sage);
+  color:var(--green);
+  padding:5px 10px;
+  font-size:8pt;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  font-weight:700;
+}
+
+.day-title { margin:10px 0 6px; }
+.day-subtitle { color:var(--muted); font-size:9pt; }
+
+.stats {
+  display:flex;
+  gap:20px;
+  padding:10px 0 13px;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  margin:12px 0 16px;
+}
+
+.stat { flex:1; }
+.stat strong {
+  display:block;
+  font-size:12pt;
+  color:var(--green);
+}
+.stat span {
+  font-size:7.5pt;
+  color:var(--muted);
+  text-transform:uppercase;
+  letter-spacing:.1em;
+}
+
+.photo-wide {
+  width:100%;
+  height:72mm;
+  border-radius:2px;
+  margin:12px 0;
+  object-fit:cover;
+}
+
+.photo-medium {
+  width:100%;
+  height:48mm;
+  border-radius:2px;
+  object-fit:cover;
+}
+
+.photo-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:9px;
+  margin:12px 0;
+}
+
+.photo-grid img {
+  height:65mm;
+  width:100%;
+  object-fit:cover;
+}
+
+/* Taller paired images in the Tawang accommodation feature */
+.page .panel .tawang-photo-grid img { height:64mm !important; min-height:64mm; }
+
+.photo-grid.three {
+  grid-template-columns:repeat(3,1fr);
+}
+
+.photo-grid.three img { height:42mm; }
+
+.caption {
+  font-size:7.5pt;
+  margin-top:4px;
+}
+
+.two-col {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+.three-col {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
+
+.panel {
+  background:var(--cream);
+  padding:13px 15px;
+  border:1px solid #eee9df;
+}
+
+.panel.green {
+  background:var(--sage);
+  border:0;
+}
+
+.panel h3 { margin-bottom:6px; }
+
+.callout {
+  border-left:3px solid var(--gold);
+  background:#faf7f0;
+  padding:11px 14px;
+  margin:12px 0;
+}
+
+.timeline {
+  border-left:1px solid #cbd5cc;
+  margin:14px 0 10px 5px;
+  padding-left:17px;
+}
+
+.timeline-item {
+  position:relative;
+  margin-bottom:12px;
+}
+
+.timeline-item:before {
+  content:"";
+  position:absolute;
+  left:-22px;
+  top:5px;
+  width:8px;
+  height:8px;
+  background:var(--gold);
+  border-radius:50%;
+}
+
+.timeline-item strong {
+  display:block;
+  margin-bottom:2px;
+}
+
+ul { padding-left:17px; margin:5px 0 10px; }
+li { margin:3px 0; }
+
+.checklist { list-style:none; padding:0; }
+.checklist li {
+  padding-left:20px;
+  position:relative;
+  margin:7px 0;
+}
+.checklist li:before {
+  content:"✓";
+  position:absolute;
+  left:0;
+  color:var(--green);
+  font-weight:700;
+}
+.crosslist li:before { content:"–"; color:#9a6d50; }
+
+table {
+  width:100%;
+  border-collapse:collapse;
+  font-size:8.5pt;
+}
+
+th {
+  background:var(--sage);
+  color:var(--green);
+  text-align:left;
+  padding:9px 8px;
+  font-size:7.5pt;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+
+td {
+  border-bottom:1px solid var(--line);
+  padding:9px 8px;
+  vertical-align:top;
+}
+
+.price {
+  color:var(--green);
+  font-weight:700;
+}
+
+.payment-step {
+  border:1px solid var(--line);
+  padding:13px;
+  text-align:center;
+}
+
+.payment-step strong {
+  display:block;
+  font-family:'Playfair Display',serif;
+  font-size:22pt;
+  color:var(--green);
+}
+
+.payment-step span {
+  font-size:8pt;
+  color:var(--muted);
+}
+
+.hamper-image {
+  width:100%;
+  height:auto;
+  max-height:145mm;
+  object-fit:contain;
+  background:#f6f0e8;
+}
+
+.no-break { break-inside:avoid; }
+
+.closing {
+  background:var(--ink);
+  color:white;
+  margin:12mm -17mm -15mm;
+  padding:18mm 17mm;
+}
+
+.closing h2 { color:white; }
+.closing p { color:#d9e0da; }
+
+@page {
+  size: A4;
+  margin: 10mm;
+}
+
+@media print {
+  @page { size: A4; margin: 8mm; }
+
+  html, body {
+    width: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    font-size: 8.6pt !important;
+    line-height: 1.34 !important;
+  }
+
+  .page {
+    width: 100% !important;
+    min-height: 0 !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 5mm 7mm 10mm !important;
+    overflow: visible !important;
+    box-shadow: none !important;
+    break-after: page;
+    page-break-after: always;
+  }
+
+  .page:last-child {
+    break-after: auto !important;
+    page-break-after: auto !important;
+  }
+
+  /* Consistent, compact vertical rhythm */
+  h1 { font-size: 29pt !important; }
+  h2 { font-size: 20pt !important; line-height: 1.12 !important; }
+  h3 { font-size: 13pt !important; margin-bottom: 4px !important; }
+  h4 { margin-bottom: 4px !important; }
+  p { margin-bottom: 4px !important; }
+  ul { margin: 3px 0 6px !important; }
+  li { margin: 2px 0 !important; }
+
+  .section-head {
+    margin-bottom: 10px !important;
+    padding-bottom: 6px !important;
+    gap: 8px !important;
+  }
+
+  .day-title { margin: 6px 0 4px !important; }
+  .day-label { padding: 3px 7px !important; }
+  .intro { font-size: 11.5pt !important; line-height: 1.35 !important; }
+
+  .hero {
+    width: calc(100% + 14mm) !important;
+    margin: -5mm -7mm 0 !important;
+    height: 112mm !important;
+  }
+
+  .hero[style*="180mm"] { height: 120mm !important; }
+
+  .hero-copy {
+    left: 11mm !important;
+    right: 10mm !important;
+    bottom: 11mm !important;
+  }
+
+  .cover-bottom {
+    padding-top: 6mm !important;
+    gap: 6mm !important;
+  }
+
+  .stats {
+    gap: 9px !important;
+    padding: 5px 0 6px !important;
+    margin: 6px 0 8px !important;
+  }
+
+  .stat strong { font-size: 10.5pt !important; }
+  .stat span { font-size: 6.8pt !important; }
+
+  .photo-wide {
+    height: 40mm !important;
+    margin: 6px 0 !important;
+  }
+
+  .photo-medium { height: 34mm !important; }
+
+  .photo-grid {
+    gap: 7px !important;
+    margin: 7px 0 !important;
+  }
+
+  .photo-grid img { height: 34mm !important; }
+
+  /* Keep the paired Tawang room photographs taller, without affecting other grids. */
+  .page .panel .tawang-photo-grid img {
+    height: 48mm !important;
+    min-height: 48mm !important;
+  }
+
+  .photo-grid.three img { height: 30mm !important; }
+
+  .panel, .callout {
+    padding: 7px 9px !important;
+    margin: 6px 0 !important;
+  }
+
+  .timeline {
+    margin: 7px 0 5px 5px !important;
+    padding-left: 14px !important;
+  }
+
+  .timeline-item { margin-bottom: 5px !important; }
+  td { padding: 5px !important; }
+  th { padding: 6px 5px !important; }
+  table { font-size: 7.7pt !important; }
+
+  .hamper-image { max-height: 76mm !important; }
+
+  .shergaon-photo-layout {
+    gap: 7px !important;
+    margin: 7px 0 !important;
+  }
+
+  .shergaon-left-stack { gap: 7px !important; }
+  .shergaon-left-stack img { height: 31mm !important; }
+  .shergaon-right-portrait img { height: 65mm !important; }
+
+  .closing {
+    margin: 6mm -7mm -10mm !important;
+    padding: 10mm 7mm !important;
+  }
+
+  .footer { left: 7mm !important; bottom: 4mm !important; }
+  .page-no { right: 7mm !important; bottom: 4mm !important; }
+
+  /* Avoid splitting small components, but allow long sections to flow naturally. */
+  .panel, .callout, tr, .photo-grid, .shergaon-photo-layout,
+  .payment-step, .timeline-item, .cover-bottom, .tawang-photo-grid {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .no-break { break-inside: avoid; page-break-inside: avoid; }
+
+  img { max-width: 100% !important; }
+}
+
+/* Screen layout remains independent of print sizing. */
+@media screen and (max-width:800px) {
+  .page {
+    width:100%;
+    min-height:0;
+    margin:0 0 12px;
+    padding:24px;
+  }
+  .hero {
+    width:calc(100% + 48px);
+    margin:-24px -24px 0;
+    height:65vh;
+  }
+  .hero-copy { left:24px; right:24px; }
+  h1 { font-size:29pt; }
+  .two-col,.three-col { grid-template-columns:1fr; }
+  .cover-bottom { grid-template-columns:1fr; }
+  .footer,.page-no { display:none; }
+}
+.shergaon-photo-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.shergaon-left-stack {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+}
+
+.shergaon-left-stack img {
+  width: 100%;
+  height: 43mm;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.shergaon-right-portrait img {
+  width: 100%;
+  height: 89mm;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+@media print {
+  .journey-route { margin-top:7mm; padding:4mm 4mm 3.5mm; }
+  .journey-route-heading { margin-bottom:3.5mm; }
+  .route-stop strong { font-size:9.5pt; }
+  .route-detail { font-size:6.8pt; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1: COVER -->
+<section class="page">
+  <div class="hero">
+    <img src="Sangti_Valley.jpeg" alt="Misty riverside valley in the Eastern Himalayas">
+    <div class="hero-copy">
+      <div class="eyebrow">A private journey • Arunachal Pradesh</div>
+      <h1>The Tawang &<br>Shergaon Escape</h1>
+      <p>A private Himalayan road journey for two — through riverside valleys, high mountain passes, sacred lakes and quiet mountain landscapes.</p>
+      <div class="cover-meta">
+        <span>6 Days / 6 Nights</span>
+        <span>Private Road Trip</span>
+        <span>Private Cab</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cover-bottom">
+    <div>
+      <div class="eyebrow">The journey</div>
+      <h3>From river valleys to the high Himalayas</h3>
+      <p class="small">A scenic circuit beginning in Guwahati, travelling through Sangti Valley and Tawang, and returning via the peaceful countryside of Shergaon.</p>
+    </div>
+    <div>
+      <div class="eyebrow">A little something special</div>
+      <p class="intro">Thoughtful moments, mountain views and a few lovely surprises along the way — designed for two to slow down and enjoy the journey together.</p>
+    </div>
+  </div>
+
+  <div class="journey-route">
+    <div class="journey-route-heading">
+      <span class="eyebrow">Your route, at a glance</span>
+      <span class="journey-route-note">A beautiful loop through the Eastern Himalayas</span>
+    </div>
+    <div class="route-stops">
+      <div class="route-stop">
+        <span class="route-dot">01</span>
+        <strong>Guwahati</strong>
+        <span class="route-detail">The journey begins</span>
+      </div>
+      <div class="route-stop">
+        <span class="route-dot">02</span>
+        <strong>Sangti Valley</strong>
+        <span class="route-detail">Riverside stillness</span>
+      </div>
+      <div class="route-stop">
+        <span class="route-dot">03</span>
+        <strong>Tawang</strong>
+        <span class="route-detail">Into the high Himalayas</span>
+      </div>
+      <div class="route-stop">
+        <span class="route-dot">04</span>
+        <strong>Shergaon</strong>
+        <span class="route-detail">A quieter mountain escape</span>
+      </div>
+      <div class="route-stop">
+        <span class="route-dot">05</span>
+        <strong>Guwahati</strong>
+        <span class="route-detail">The return</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">A private Himalayan escape</div>
+  <div class="page-no">01</div>
+</section>
+
+
+<!-- PAGE 2: OVERVIEW -->
+<section class="page">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">At a glance</div>
+      <h2>Your journey, mapped out</h2>
+    </div>
+    <div class="day-label">6 days / 6 nights</div>
+  </div>
+
+  <p class="intro">A road trip through some of Arunachal Pradesh's most memorable landscapes, combining long scenic drives with time in the mountains.</p>
+
+  <img class="photo-wide" src="Sangti_Valley2.jpeg" alt="Sangti Valley landscape">
+
+  <div class="stats">
+    <div class="stat"><strong>6D / 6N</strong><span>Duration</span></div>
+    <div class="stat"><strong>Private</strong><span>Travel style</span></div>
+    <div class="stat"><strong>Couple</strong><span>Journey type</span></div>
+    <div class="stat"><strong>Road trip</strong><span>Experience</span></div>
+  </div>
+
+  <h3>Route overview</h3>
+  <table>
+    <tr><th>Day</th><th>Route / Plan</th><th>Overnight</th></tr>
+    <tr><td>Day 0</td><td>Arrive in Guwahati, late evening</td><td>Guwahati</td></tr>
+    <tr><td>Day 1</td><td>Guwahati → Tezpur → Bhalukpong → Bomdila → Dirang → Sangti Valley</td><td>Sangti Valley</td></tr>
+    <tr><td>Day 2</td><td>Sangti → Sela Pass → Sela Lake → Jaswant Garh → Nuranang Falls → Tawang</td><td>Tawang</td></tr>
+    <tr><td>Day 3</td><td>Tawang, high-altitude lakes and Bumla Pass excursion</td><td>Tawang</td></tr>
+    <tr><td>Day 4</td><td>Tawang → Dirang → Bomdila → Shergaon</td><td>Shergaon</td></tr>
+    <tr><td>Day 5</td><td>Shergaon → Rupa → Bhalukpong → Tezpur → Guwahati</td><td>Guwahati</td></tr>
+  </table>
+
+  <div class="callout">
+    <strong>Travel note</strong>
+    <p class="small">Driving distances and journey durations are estimates and may vary depending on road conditions, weather, traffic, permits and local restrictions.</p>
+  </div>
+
+  <div class="footer">The Tawang & Shergaon Escape</div>
+  <div class="page-no">02</div>
+</section>
+
+
+<!-- PAGE 3: ARRIVAL AND SANGTI -->
+<section class="page">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">The itinerary</div>
+      <h2>Into the mountains</h2>
+    </div>
+    <div class="day-label">Days 0–1</div>
+  </div>
+
+  <div class="day-label">Day 0 • Arrival</div>
+  <h3 class="day-title">Welcome to Guwahati</h3>
+  <p>Arrive in Guwahati at approximately 10:00 PM. Check in to a comfortable hotel near the airport and rest before the road journey begins the following morning.</p>
+
+  <div class="panel">
+    <strong>Airport-area hotel</strong>
+    <p class="small">Indicative accommodation estimate: ₹1,200–₹1,500 per room per night. Hotel selection subject to final confirmation.</p>
+    <p class="small"><strong>Transfer:</strong> Airport pickup on arrival night is not included.</p>
+  </div>
+
+  <div style="height:8mm"></div>
+
+  <div class="day-label">Day 1 • Guwahati to Sangti Valley</div>
+  <h3 class="day-title">A scenic drive into the Eastern Himalayas</h3>
+  <p>Set off early from Guwahati and travel through Tezpur, Bhalukpong, Bomdila and Dirang before reaching the beautiful riverside setting of Sangti Valley.</p>
+
+  <div class="stats">
+    <div class="stat"><strong>350–385 km</strong><span>Approx. distance</span></div>
+    <div class="stat"><strong>9–11 hrs</strong><span>Drive with breaks</span></div>
+    <div class="stat"><strong>5–6 AM</strong><span>Suggested departure</span></div>
+  </div>
+
+  <img class="photo-wide" src="418.jpg" alt="Sangti Valley and river landscape">
+
+  <div class="two-col">
+    <div>
+      <h4>Along the way</h4>
+      <ul>
+        <li>Drive through the changing landscapes of Assam and Arunachal Pradesh.</li>
+        <li>Scenic mountain roads, rivers and forested stretches.</li>
+        <li>Arrive in Sangti Valley by evening, depending on road conditions.</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Evening experience</h4>
+      <p>Enjoy a candlelight dinner beside the river, with a romantic table arrangement and complimentary wine.</p>
+      <p class="small">Food is ordered separately from the property's menu.</p>
+    </div>
+  </div>
+
+  <div class="photo-grid">
+    <div>
+      <img src="Sangti BlueBird.png" alt="Riverside accommodation in Sangti Valley">
+      <div class="caption">Riverside stay setting</div>
+    </div>
+    <div>
+      <img src="Sangti Candle night.jpeg" alt="Candlelight dinner table arrangement">
+      <div class="caption">A special evening by the river</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>Dinner suggestions</strong>
+    <p class="small">Chicken or paneer tikka, a local curry, dal, seasonal vegetables, rice or pulao, naan or roti, followed by dessert. Items are subject to menu availability and are charged separately.</p>
+  </div>
+
+  <div class="footer">The Tawang & Shergaon Escape</div>
+  <div class="page-no">03</div>
+</section>
+
+
+<!-- PAGE 4: SELA AND TAWANG -->
+<section class="page">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">The itinerary</div>
+      <h2>Crossing into Tawang</h2>
+    </div>
+    <div class="day-label">Day 2</div>
+  </div>
+
+  <h3 class="day-title">Sangti Valley to Tawang</h3>
+  <p>Leave Sangti Valley and make your way towards Tawang through one of the region's most spectacular mountain routes. The day brings dramatic high-altitude scenery, a glacial lake, a historic memorial and a powerful waterfall.</p>
+
+  <div class="stats">
+    <div class="stat"><strong>150–180 km</strong><span>Approx. distance</span></div>
+    <div class="stat"><strong>8–10 hrs</strong><span>Total journey</span></div>
+    <div class="stat"><strong>7 AM</strong><span>Suggested departure</span></div>
+  </div>
+
+  <img class="photo-wide" src="Sela_Pass.jpg" alt="Sela Pass in the Eastern Himalayas">
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <strong>Dirang</strong>
+      <p class="small">A short stop may be possible at Dirang Monastery, depending on the day's schedule.</p>
+    </div>
+    <div class="timeline-item">
+      <strong>Sela Pass — approximately 4,170 metres</strong>
+      <p class="small">A spectacular high-altitude mountain pass, with snow-covered landscapes during suitable weather conditions.</p>
+    </div>
+    <div class="timeline-item">
+      <strong>Sela Lake</strong>
+      <p class="small">Pause for photographs and enjoy the striking mountain setting.</p>
+    </div>
+    <div class="timeline-item">
+      <strong>Jaswant Garh War Memorial</strong>
+      <p class="small">A memorial honouring the bravery and sacrifice of Indian soldiers.</p>
+    </div>
+    <div class="timeline-item">
+      <strong>Nuranang / Jung Falls</strong>
+      <p class="small">A dramatic waterfall cascading down the mountainside, famously associated with the song “Tanhai Tanhai” from the film Koyla.</p>
+    </div>
+    <div class="timeline-item">
+      <strong>Arrive in Tawang</strong>
+      <p class="small">Check in and unwind after the mountain drive.</p>
+    </div>
+  </div>
+
+  <div class="panel green">
+    <h3>Two nights in Tawang</h3>
+    <p>Stay at a comfortable mountain-view property, with time to relax between the scenic drive and the following day's excursion.</p>
+    <p class="small">Breakfast is not included. Tea with cookies or cake will be arranged separately.</p>
+  </div>
+
+  <div class="footer">The Tawang & Shergaon Escape</div>
+  <div class="page-no">04</div>
+</section>
+
+
+<!-- PAGE 5: TAWANG STAY FEATURE -->
+<section class="page">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">Your mountain stay</div>
+      <h2>Two nights in Tawang</h2>
+    </div>
+    <div class="day-label">Accommodation feature</div>
+  </div>
+
+  <p class="intro">A comfortable mountain-view retreat to return to after days spent exploring the high-altitude landscapes around Tawang.</p>
+
+  <div class="panel green no-break" style="margin:12px 0">
+    <div class="eyebrow">Tawang accommodation</div>
+    <h2 style="font-size:25pt;margin:5px 0 8px">Himalayan Mountain Stay</h2>
+    <p>Settle into a warm and welcoming room after your scenic journey through Sela Pass. Enjoy the views, unwind between excursions and return here after your Bumla Pass adventure.</p>
+
+    <div class="photo-grid tawang-photo-grid">
+      <img src="Khaar 3.webp" alt="Mountain-view bedroom in Tawang">
+      <img src="Khaar 2.webp" alt="Comfortable bedroom in Tawang">
+    </div>
+
+    <img class="photo-medium" src="KhaarView.jpg" alt="Additional Tawang accommodation view">
+
+    <p class="small" style="margin-top:10px">
+      Two nights' accommodation. Breakfast is not included.
+      Tea with cookies or cake will be arranged separately.
+    </p>
+  </div>
+
+  <div class="callout">
+    <strong>Rest and recharge</strong>
+    <p class="small">The stay gives you a comfortable base for the full-day Bumla Pass and high-altitude lake excursion on Day 3.</p>
+  </div>
+
+  <div class="footer">The Tawang & Shergaon Escape</div>
+  <div class="page-no">05</div>
+</section>
+
+
+<!-- PAGE 6: BUMla -->
+<section class="page">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">The itinerary</div>
+      <h2>Into the high Himalayas</h2>
+    </div>
+    <div class="day-label">Day 3</div>
+  </div>
+
+  <h3 class="day-title">Tawang, high-altitude lakes & Bumla Pass</h3>
+  <p>Spend the day exploring the extraordinary landscapes beyond Tawang. This is a full-day high-altitude excursion, with pristine lakes, mountain panoramas and the historic border region.</p>
+
+  <div class="stats">
+    <div class="stat"><strong>8–10 hrs</strong><span>Approx. excursion</span></div>
+    <div class="stat"><strong>7–8 AM</strong><span>Suggested departure</span></div>
+    <div class="stat"><strong>15,200 ft</strong><span>Bumla Pass altitude</span></div>
+  </div>
+
+  <img class="photo-wide" src="Bumla_Pass.jpg" alt="Bumla Pass at high altitude">
+
+  <h3>Proposed sightseeing circuit</h3>
+  <div class="two-col">
+    <ul>
+      <li>P.T. Tso</li>
+      <li>Nagula Lake</li>
+      <li>Klemta Lake</li>
+      <li>Khamakhar Tso</li>
+    </ul>
+    <ul>
+      <li>Sangetsar Tso / Madhuri Lake</li>
+      <li>Joginder Singh Memorial</li>
+      <li>Bumla Pass</li>
+    </ul>
+  </div>
+
+  <div class="callout">
+    <strong>Important Bumla excursion information</strong>
+    <p class="small">Bumla Pass requires special permission and Army clearance. Travel is subject to weather, road conditions and local authorisation. An authorised local 4x4 vehicle is included for the Bumla excursion.</p>
+  </div>
+
+  <h4>Evening at leisure</h4>
+  <p>Return to Tawang after the excursion and enjoy a relaxed evening at the hotel.</p>
+
+  <p class="small">Carry snacks and drinking water for the excursion. Meals are not included. The exact lake sequence and accessibility will be confirmed with the local operator. The optional Tawang War Memorial Light & Sound Show is not included; timing and ticket charges should be confirmed locally.</p>
+
+  <div class="footer">The Tawang & Shergaon Escape</div>
+  <div class="page-no">06</div>
+</section>
+
+
+<!-- PAGE 7: SHERGAON AND RETURN -->
+<section class="page">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">The return journey</div>
+      <h2>Quiet corners & countryside</h2>
+    </div>
+    <div class="day-label">Days 4–5</div>
+  </div>
+
+  <div class="day-label">Day 4 • Tawang to Shergaon</div>
+  <h3 class="day-title">A slower pace in Shergaon</h3>
+
+  <p>Depart Tawang after breakfast and travel back through Dirang and Bomdila towards Shergaon. Arrive in the afternoon and settle into a peaceful tree-villa stay surrounded by nature.</p>
+
+  <div class="stats">
+    <div class="stat">
+      <strong>200–215 km</strong>
+      <span>Approx. distance</span>
+    </div>
+    <div class="stat">
+      <strong>6–8 hrs</strong>
+      <span>Estimated drive</span>
+    </div>
+    <div class="stat">
+      <strong>7–8 AM</strong>
+      <span>Suggested departure</span>
+    </div>
+  </div>
+
+  <!-- SHERGAON EDITORIAL IMAGE LAYOUT -->
+  <div class="shergaon-photo-layout">
+
+    <div class="shergaon-left-stack">
+      <img src="Shergaon.jpg"
+           alt="Shergaon Tree Villa exterior">
+
+      <img src="Shergaon 2.png"
+           alt="Shergaon Tree Villa bedroom interior">
+    </div>
+
+    <div class="shergaon-right-portrait">
+      <img src="Shergaon 1.png"
+           alt="Shergaon mountain landscape">
+    </div>
+
+  </div>
+
+  <div class="panel green">
+    <h3>Shergaon Tree Villa</h3>
+    <p class="small">A quiet countryside stay offering a change of pace after the high-altitude mountain journey.</p>
+  </div>
+
+  <div style="height:7mm"></div>
+
+  <div class="day-label">Day 5 • Shergaon to Guwahati</div>
+  <h3 class="day-title">Back to Guwahati</h3>
+
+  <p>Begin the return journey through Rupa, Bhalukpong and Tezpur, continuing onwards to Guwahati. The planned drop is near Kamakhya Temple.</p>
+
+  <div class="stats">
+    <div class="stat">
+      <strong>220–250 km</strong>
+      <span>Approx. distance</span>
+    </div>
+    <div class="stat">
+      <strong>6–8 hrs</strong>
+      <span>Estimated drive</span>
+    </div>
+    <div class="stat">
+      <strong>7–8 AM</strong>
+      <span>Suggested departure</span>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h3>Guwahati return stay</h3>
+    <p>One night at a hotel near Kamakhya Temple. The hotel will be finalised subject to availability.</p>
+    <p class="small">A visit to Kamakhya Temple may be planned the following morning, subject to the onward travel schedule.</p>
+  </div>
+
+  <div class="footer">The Tawang & Shergaon Escape</div>
+  <div class="page-no">07</div>
+</section>
+
+<!-- PAGE 8: ACCOMMODATION OVERVIEW -->
+<section class="page">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">Where you'll stay</div>
+      <h2>Accommodation overview</h2>
+    </div>
+  </div>
+
+  <p class="intro">A selection of comfortable stays along the route, balancing convenient overnight stops with memorable mountain and countryside settings.</p>
+
+  <table>
+    <tr><th>Destination</th><th>Stay</th><th>Nights</th><th>Notes</th></tr>
+    <tr>
+      <td>Guwahati — arrival</td>
+      <td><strong>Airport Comfort Stay</strong></td>
+      <td>1</td>
+      <td>Hotel near airport. Indicative estimate ₹1,200–₹1,500 per room.</td>
+    </tr>
+    <tr>
+      <td>Sangti Valley</td>
+      <td><strong>Riverside Valley Retreat</strong></td>
+      <td>1</td>
+      <td>Riverside setting and candlelight dinner arrangement.</td>
+    </tr>
+    <tr>
+      <td>Tawang</td>
+      <td><strong>Himalayan Mountain Stay</strong></td>
+      <td>2</td>
+      <td>Mountain-view room. Breakfast not included; tea and snacks arranged separately.</td>
+    </tr>
+    <tr>
+      <td>Shergaon</td>
+      <td><strong>Shergaon Tree Villa</strong></td>
+      <td>1</td>
+      <td>Tree-villa stay in a peaceful countryside setting.</td>
+    </tr>
+    <tr>
+      <td>Guwahati — return</td>
+      <td><strong>Kamakhya City Stay</strong></td>
+      <td>1</td>
+      <td>Hotel near Kamakhya Temple. Indicative estimate ₹1,200–₹1,500 per room.</td>
+    </tr>
+  </table>
+
+  <div class="callout">
+    <strong>Accommodation note</strong>
+    <p class="small">The itinerary includes six overnight stays: one in arrival Guwahati, one in Sangti Valley, two in Tawang, one in Shergaon and one in return Guwahati. Guwahati hotel selections are subject to final confirmation and availability.</p>
+  </div>
+
+  <h3 style="margin-top:20px">A closer look at your stays</h3>
+
+  <div class="photo-grid">
+    <div>
+      <img class="photo-medium" src="Sangti BlueBirda.png" alt="Riverside accommodation in Sangti Valley">
+      <h4 style="margin-top:7px">Sangti Valley</h4>
+      <p class="small">Riverside setting with a candlelight dinner arrangement.</p>
+    </div>
+    <div>
+      <img class="photo-medium" src="Shergaon 1.webp" alt="Shergaon Tree Villa">
+      <h4 style="margin-top:7px">Shergaon Tree Villa</h4>
+      <p class="small">A peaceful tree-villa experience in the countryside.</p>
+    </div>
+  </div>
+
+  <div class="footer">The Tawang & Shergaon Escape</div>
+  <div class="page-no">08</div>
+</section>
+
+
+<!-- PAGE 9: INCLUSIONS AND EXCLUSIONS -->
+<section class="page">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">The details</div>
+      <h2>Inclusions & exclusions</h2>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="panel green">
+      <h3>Included</h3>
+      <ul class="checklist">
+        <li>Accommodation for all six nights across the listed route, including both Guwahati stays.</li>
+        <li>Private Swift Dzire with an experienced and courteous driver for the scheduled itinerary.</li>
+        <li>Fuel, tolls, parking and driver allowance.</li>
+        <li>Authorised local 4x4 vehicle for the Bumla Pass excursion.</li>
+        <li>Arunachal Pradesh Inner Line Permit arrangements.</li>
+        <li>Riverside candlelight dinner setup in Sangti Valley.</li>
+        <li>Complimentary wine with the Sangti Valley dinner arrangement.</li>
+        <li>Scheduled transfers and sightseeing transportation.</li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <h3>Not included</h3>
+      <ul class="checklist crosslist">
+        <li>Airport pickup on Day 0 (arrival night).</li>
+        <li>Meals and beverages, except the specifically mentioned complimentary arrangements.</li>
+        <li>Food ordered separately from the Sangti Valley property's menu.</li>
+        <li>Personal entry or admission fees at attractions, monuments and visitor sites.</li>
+        <li>Optional Tawang War Memorial Light & Sound Show tickets.</li>
+        <li>Optional honeymoon hamper (₹3,999).</li>
+        <li>Personal expenses, shopping, tips and services not specifically listed.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>Important distinction</strong>
+    <p class="small">Both Guwahati hotel nights are included in the accommodation plan. The airport transfer on arrival night (Day 0) is not included.</p>
+  </div>
+
+  <h3>Booking payment schedule</h3>
+
+  <div class="three-col">
+    <div class="payment-step">
+      <strong>25%</strong>
+      <span>Token deposit to confirm booking</span>
+    </div>
+    <div class="payment-step">
+      <strong>50%</strong>
+      <span>At the commencement of the trip</span>
+    </div>
+    <div class="payment-step">
+      <strong>25%</strong>
+      <span>One day before the trip ends</span>
+    </div>
+  </div>
+
+  <p class="small" style="margin-top:10px;text-align:center">Total payment: 100% of the agreed package amount.</p>
+
+  <div class="footer">The Tawang & Shergaon Escape</div>
+  <div class="page-no">09</div>
+</section>
+
+
+<!-- PAGE 10: HAMPER AND TRAVEL NOTES -->
+<section class="page">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">A thoughtful extra</div>
+      <h2>The honeymoon hamper</h2>
+    </div>
+    <div class="day-label">Optional • ₹3,999</div>
+  </div>
+
+  <p class="intro">Make the journey a little more special with an optional curated hamper, thoughtfully put together for a celebration of two.</p>
+
+  <img class="hamper-image" src="hamper.jpg" alt="Honeymoon hamper concept">
+
+  <div class="two-col">
+    <div>
+      <h3>Hamper concept</h3>
+      <ul>
+        <li>Premium Scotch Whisky</li>
+        <li>Luxe Scented Candles</li>
+        <li>Chocolates & Sweet Treats</li>
+        <li>Curated Honeymoon Hamper</li>
+        <li>Celebratory Additions</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Good to know</h3>
+      <p class="small">The hamper is optional and priced at ₹3,999. Final contents, brands and presentation may vary depending on availability. Any alcoholic item is subject to applicable regulations and the property's policy.</p>
+    </div>
+  </div>
+
+  <div style="height:6mm"></div>
+
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">Before you travel</div>
+      <h2>Useful travel notes</h2>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <h4>Permits & identification</h4>
+      <p class="small">Carry a valid original government-issued photo ID for Inner Line Permit arrangements and travel formalities.</p>
+
+      <h4>Weather & road conditions</h4>
+      <p class="small">Mountain weather can change quickly. Driving schedules may be adjusted for safety and local conditions.</p>
+    </div>
+    <div>
+      <h4>Bumla Pass access</h4>
+      <p class="small">The excursion depends on special permits, Army clearance, weather and road accessibility.</p>
+
+      <h4>High-altitude travel</h4>
+      <p class="small">The itinerary includes high-altitude locations. Follow local guidance and allow the driver/operator to adjust the plan when needed.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>Itinerary flexibility</strong>
+    <p class="small">The exact sequence of high-altitude lakes and sightseeing stops will be confirmed with the local operator. Some locations may be inaccessible due to weather, road or administrative restrictions.</p>
+  </div>
+
+  <div class="footer">The Tawang & Shergaon Escape</div>
+  <div class="page-no">10</div>
+</section>
+
+
+<!-- PAGE 11: CLOSING -->
+<section class="page">
+  <div class="hero" style="height:180mm">
+    <img src="Shergaon.jpg" alt="Peaceful mountain landscape in Shergaon">
+    <div class="hero-copy">
+      <div class="eyebrow">A journey to remember</div>
+      <h1>Find your own<br>little corner of the Himalayas.</h1>
+      <p>From riverside evenings to snow-lined mountain passes, may this journey be filled with beautiful views, meaningful moments and memories you carry home.</p>
+    </div>
+  </div>
+
+  <div class="closing">
+    <div class="eyebrow" style="color:#d8c09b">Until the mountains call again</div>
+    <h2>We look forward to making your journey through the Eastern Himalayas comfortable, memorable and truly special.</h2>
+    <p>A private road journey through Guwahati, Sangti Valley, Tawang and Shergaon.</p>
+  </div>
+
+  <div class="page-no">11</div>
+</section>
+
+</body>
+</html>
